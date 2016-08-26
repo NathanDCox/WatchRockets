@@ -1,5 +1,4 @@
-
-
+//Click Events
  document.addEventListener("DOMContentLoaded", function() {
 	//Toggle Nav Menu
 	document.getElementById("menu").onclick=function(){
@@ -19,9 +18,7 @@
  	}
 });
 
-
-
-//Mailchimp API Form Submission.
+//HTTP request - Mailchimp API Form Submission.
 document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("mc-form").addEventListener("submit", function submit(e){
 		e.preventDefault();
@@ -64,16 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		formSubmit(formResponse);
 	})
 });
-/*//Clear form starting values when focused.
-function fillField(input){
-      if(input.value == "")
-         input.value= "Email Address";
-};
-function clearField(input){
-      if(input.value == "Email Address")
-         input.value="";
-};*/
-//Request LaunchLibrary API data and pass to callback
+//HTTP Request - LaunchLibrary API data and pass to callback
 function data(callback){
 	var url = 'https://launchlibrary.net/1.2/launch/next/1024/mode=verbose';
 	var request = new XMLHttpRequest();
@@ -118,8 +106,7 @@ function launchDisplay(data){
 	var vidLink = [];
 	var launchID = [];
 	var locations = [];
-
-
+//Begin processing data.
 	for(i = 0; i < data.launches.length; i++){
 		//Get the names of the rockets and missions
 		names.push(data.launches[i].name);	
@@ -138,7 +125,6 @@ function launchDisplay(data){
 		}else{
 			timestamps.push(data.launches[i].windowstart);	
 		}
-		
 		//Get Launch ID
 		launchID.push(' id="' + data.launches[i].id);
 		//Get unix timestamp for window opening and closing times
@@ -199,7 +185,6 @@ function launchDisplay(data){
 			}
 		}
 	}
-
 	//Split timestamps array into Month, Date, Year, timeCheck arrays
 	for (i = 0; i < timestamps.length; i++) {
 
@@ -272,7 +257,6 @@ function launchDisplay(data){
 	function webcast(link){
 		if(link !== ""){
 			return '<p class="webcast"><a href="' + link + '" title="Watch this launch!" target="_blank"><i class="fa fa-rocket" aria-hidden="true"></i>  Watch webcast</a></p>';
-		
 		}else{
 			return '<p class="no-webcast">Webcast currently unavailable</p>';
 		}
@@ -297,10 +281,12 @@ function launchDisplay(data){
 		for(i = 0; i < launchArray.length; i++){
 			if(main !== null){
 				if(i < 24){
+					document.querySelector('.uil-spin-css').classList.add('hidden');
 					main.innerHTML += launchArray[i];
 				}
 			}else{
 				if(i< 8){
+					document.querySelector('.uil-spin-css').classList.add('hidden');
 					document.getElementById("launches-side").innerHTML += launchArray[i];
 				}
 			}
@@ -316,6 +302,5 @@ function launchDisplay(data){
 		}
 	} 
 	paginate();
-	console.log();
 }
 data(launchDisplay);
