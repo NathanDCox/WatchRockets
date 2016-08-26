@@ -91,14 +91,32 @@
 				<aside class="secondary">
 					<h2>Upcoming Launches</h2>
 					<div id="launches-side">
-						
+						<div class='uil-spin-css' style='-webkit-transform:scale(0.32)'><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div>
 					</div>
 				</aside>
 			</main>
 		</div>
 		<footer id="footer" class="site-footer">
 			<div class="footer-inner">
-
+				<div class="spacer">
+				</div>
+				<div class="footer-links">
+					<p>&#169; WatchRockets.com</p>
+					<a href="#">About</a>
+					<a href="#">LaunchLibrary API</a>
+					<a href="#">News</a>
+					<a href="#">Rockets</a>
+					<a href="#">Launch Providers</a>
+				</div>
+				<div class="footer-signup">
+					<form id="mc-form" method="POST" action="./email-validate.php">
+					  <h3 class="launch-alerts">Never miss a launch with Launch Alerts</h3>
+					  <div class="formfields">
+						  <input type="email" id="mc-email" class="email-box" name="mc-email" value="Email Address" onfocus="clearField(this);" onblur="fillField(this);" required/>
+						  <button type="submit">Sign Up</button>
+					  </div>
+					</form>
+				</div>
 			</div>	
 		</footer>
 	<script src="scripts.js"></script>
