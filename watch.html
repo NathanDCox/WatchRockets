@@ -9,7 +9,6 @@
 	  <!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	  <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet"> -->
 	  <link rel="stylesheet" href="style.min.css">
-	  <link rel="stylesheet" type="text/css" href="spin.css">
 	  <!--[if lt IE 9]>
 	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	  <![endif]-->
@@ -90,7 +89,25 @@
 		</div>
 		<footer id="footer" class="site-footer">
 			<div class="footer-inner">
-
+				<div class="spacer">
+				</div>
+				<div class="footer-links">
+					<p>&#169; WatchRockets.com</p>
+					<a href="#">About</a>
+					<a href="#">LaunchLibrary API</a>
+					<a href="#">News</a>
+					<a href="#">Rockets</a>
+					<a href="#">Launch Providers</a>
+				</div>
+				<div class="footer-signup">
+					<form id="mc-form" method="POST" action="./email-validate.php">
+					  <h3 class="launch-alerts">Never miss a launch with Launch Alerts</h3>
+					  <div class="formfields">
+						  <input type="email" id="mc-email" class="email-box" name="mc-email" value="Email Address" onfocus="clearField(this);" onblur="fillField(this);" required/>
+						  <button type="submit">Sign Up</button>
+					  </div>
+					</form>
+				</div>
 			</div>	
 		</footer>
 	<script src="scripts.js"></script>
