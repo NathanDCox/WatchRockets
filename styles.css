@@ -1102,7 +1102,8 @@ h1 .fa-rocket {
   font-size: 1.8em;
   font-weight: 200;
   color: #fff;
-  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px;
+  text-shadow: #000 0px 0px 1px,
+ #000 0px 0px 1px;
 }
 
 /*------------  Content -------------*/
