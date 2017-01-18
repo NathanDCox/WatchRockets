@@ -42,10 +42,10 @@ function formSubmit(form, input){
 
 			var data = "email=" + encodeURIComponent(document.getElementById(input).value);
 			var endpoint = document.getElementById(form).getAttribute('action');
-			
+
 			function formHttp(callback){
 				var request = new XMLHttpRequest();
-				
+
 					request.onreadystatechange = function() {
 						if (request.readyState === 4) {
 				  		  if (request.status === 200) {
@@ -118,7 +118,7 @@ var launchArray = [];
 function launchDisplay(data){
 	//console.log(data);
 	//Array of html data to print to page for each launch
-	
+
 	//Gather and store relevant data
 	var names = [];
 	var timestamps = [];
@@ -145,7 +145,7 @@ function launchDisplay(data){
 //Begin processing data.
 	for(i = 0; i < data.launches.length; i++){
 		//Get the names of the rockets and missions
-		names.push(data.launches[i].name);	
+		names.push(data.launches[i].name);
 	}
 	//Split the Rockets and Missions apart and save them as separate variables.
 	for (i = 0; i < names.length; i++) {
@@ -153,13 +153,13 @@ function launchDisplay(data){
 	    temp[0] = temp[0].replace(/Full Thrust/g, 'FT');
 	    rockets.push(temp[0]);
 	    missions.push(temp[1]);
-	}	
+	}
 	for(i = 0; i < data.launches.length; i++){
 		//Get Date information
 		if(data.launches[i].windowstart === null){
 			timestamps.push('Launch Ended');
 		}else{
-			timestamps.push(data.launches[i].windowstart);	
+			timestamps.push(data.launches[i].windowstart);
 		}
 		//Get Launch ID
 		launchID.push(' id="' + data.launches[i].id);
@@ -202,7 +202,9 @@ function launchDisplay(data){
 					agencies.push('Rocket Lab');
 			}else if(rockets[i].indexOf('SLS') >= 0){
 					agencies.push('NASA');
-			}else{
+			}else if(rockets[i].indexOf('New Shepard') >= 0){
+					agencies.push('Blue Origin');
+      }else{
 					agencies.push('');
 			}
 		}
@@ -243,8 +245,8 @@ function launchDisplay(data){
 	for (i = 0; i < timestamps.length; i++) {
 		var temp = timestamps[i].split(" ");
 		netMonth.push(temp[0]);
-		netDate.push(temp[1]);	
-		launchYear.push(temp[2]);	
+		netDate.push(temp[1]);
+		launchYear.push(temp[2]);
 		timeCheck.push(temp[3]);
 	}
 	//Check if launch time is confirmed, and display date as confirmed. If time not confirmed, display NET before date.
@@ -252,7 +254,7 @@ function launchDisplay(data){
 		var currentYear = new Date().getFullYear();
 		if(timeCheck[i] === "00:00:00" &&  launchYear[i] == currentYear || launchMonth[i] == 'January'){
 			launchDate.push('NET ' + netMonth[i] + ' ' + netDate[i] + ' ' + launchYear[i]);
-			netClass.push(' net ');//add class to launch when NET 
+			netClass.push(' net ');//add class to launch when NET
 		}else if(timeCheck[i] === "00:00:00" &&  launchYear[i] !== currentYear){
 			launchDate.push('NET ' + netMonth[i] + ' ' + launchYear[i]);
 			netClass.push(' net ');//add class to launch when NET
@@ -274,7 +276,7 @@ function launchDisplay(data){
 		windowCloseHr.push(hr);
 		windowCloseMin.push(min);
 	}
-	//Format Times                                                                                                                                                                                
+	//Format Times
 	function window(hr, min){
 		if(hr<12){
 			if(hr === 0){
@@ -325,9 +327,9 @@ function launchDisplay(data){
 		launchInfo += '<p id="message1" class="message message1 hidden"></p><p id="message2" class="message message2 hidden"></p></div>';//Launch-specific Messages
 		launchInfo += webcast(vidLink[i]);
 		launchInfo += '<h3 class="rocket rocket-' + (i+1) + '">' + rockets[i] + '</h3>';
-		launchInfo += '<h3 class="mission mission-' + (i+1) + '">' + missions[i] + '</h3>'; 
-		launchInfo += '<p class="date date-' + (i+1) + '">' + launchDate[i] + '</p>'; 
-		launchInfo += launchTime(window(windowOpenHr[i], windowOpenMin[i]), window(windowCloseHr[i], windowCloseMin[i]), wsstamp[i]); 
+		launchInfo += '<h3 class="mission mission-' + (i+1) + '">' + missions[i] + '</h3>';
+		launchInfo += '<p class="date date-' + (i+1) + '">' + launchDate[i] + '</p>';
+		launchInfo += launchTime(window(windowOpenHr[i], windowOpenMin[i]), window(windowCloseHr[i], windowCloseMin[i]), wsstamp[i]);
 		launchInfo += '<p class="launchpad launchpad-' + (i+1) + '">' + locations[i] + '</p></div>';
 		launchArray.push(launchInfo);
 	}
@@ -339,7 +341,7 @@ data(function(data){
 	paginate();
 	messages();
 	sortLaunches();
-});	
+});
 //Display only the first 24 launches, and add a show all launches button to show the rest.
 function paginate(){
 	var main = document.getElementById("launches-main");
@@ -374,40 +376,61 @@ function messages(){
 		var two = document.getElementById('1064');
 		if(one){
 			one.querySelector('.message1').innerHTML = '<a href="http://www.ses.com/4233325/news/2016/22407810" title="First booster to fly a second mission" target="_blank">1st Reused Core!</a>';
-			one.querySelector('.message1').classList.remove('hidden');	
+			one.querySelector('.message1').classList.remove('hidden');
 		}
 		if(two){
 			two.querySelector('.message2').innerHTML = 'ASDS';
-			two.querySelector('.message2').classList.remove('hidden');	
+			two.querySelector('.message2').classList.remove('hidden');
 		}
 
 	}
-	function osiris(){
-		var one = document.getElementById('673');
-		if(one){
-			one.querySelector('.message1').innerHTML = '<a href="http://www.patrick.af.mil/Portals/14/documents/Weather/AV-067%20OSIRIS-REx%20L-3%20Forecast.pdf?ver=2016-09-05-082408-593" title="Weather 70% GO" target="_blank">WX 70% GO</a>';
-			one.querySelector('.message1').classList.remove('hidden');	
-		}
-	}
 	function soyuzMS2(){
 		var one = document.getElementById('1054');
+		var two = document.getElementById('1054');
 		if(one){
 			one.querySelector('.message1').innerHTML = '<a href="https://www.nasa.gov/mission_pages/station/expeditions/future.html" title="Crew to the International Space Station" target="_blank">Exp. 49 Crew';
-			one.querySelector('.message1').classList.remove('hidden');	
-		}	
+			one.querySelector('.message1').classList.remove('hidden');
+		}
+		if(two){
+			two.querySelector('.message2').innerHTML = '<a href="http://blogs.nasa.gov/spacestation/2016/10/06/next-station-crew-launches-oct-19/" title="Rescheduled" target="_blank">Rescheduled</a>';
+			two.querySelector('.message2').classList.remove('hidden');
+		}
+	}
+	function soyuzMS3(){
+		var one = document.getElementById('1085');
+		if(one){
+			one.querySelector('.message1').innerHTML = '<a href="https://www.nasa.gov/mission_pages/station/expeditions/future.html" title="Crew to the International Space Station" target="_blank">Exp. 50 Crew';
+			one.querySelector('.message1').classList.remove('hidden');
+		}
 	}
 	function cygnusOA5(){
 		var one = document.getElementById('775');
 		if(one){
 			one.querySelector('.message1').innerHTML = '<a href="https://www.orbitalatk.com/news-room/insideOA/AntaresUpdate/default.aspx" title="Return to Flight" target="_blank">Return to Flight</a>';
-			one.querySelector('.message1').classList.remove('hidden');		
+			one.querySelector('.message1').classList.remove('hidden');
 		}
 	}
-			
+	function worldview(){
+		var one = document.getElementById('763');
+		if(one){
+			one.querySelector('.message1').innerHTML = '<a href="http://www.ulalaunch.com/atlas-v-to-launch-worldview4.aspx" title="3rd Attempt" target="_blank">3rd Attempt</a>';
+			one.querySelector('.message1').classList.remove('hidden');
+		}
+	}
+  function shenzhou(){
+    var one = document.getElementById('863');
+    if(one){
+      one.querySelector('.message1').innerHTML = '<a href="https://en.wikipedia.org/wiki/Shenzhou_11" title="Crewed flight to Tiangong 2 Space Station" target="_blank">Crew to Tiangong</a>';
+      one.querySelector('.message1').classList.remove('hidden');
+    }
+  }
+
 	ses10();
 	soyuzMS2();
+	soyuzMS3()
 	cygnusOA5();
-	osiris();
+	worldview();
+  shenzhou();
 }
 
 function getTimeZone(){
@@ -435,7 +458,7 @@ function sortLaunches(){
 	var india = document.getElementsByClassName('india');
 	var nasa = document.getElementsByClassName('nasa');
 	var iss = document.getElementsByClassName('iss');
-	var rocketlab = document.getElementsByClassName('rocketlab'); 
+	var rocketlab = document.getElementsByClassName('rocketlab');
 	var eurokot =  document.getElementsByClassName('eurokot');
 
 
@@ -490,7 +513,7 @@ function sortLaunches(){
 	}
 	//button is the button being clicked on.
 	function toggleOn(button) {
-		
+
 		//button returns button element clicked on.
     	//toggle returns true if contains class on, false if not
     	//var toggle = button.classList.toggle('on');

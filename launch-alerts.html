@@ -3,7 +3,7 @@
 <html lang="en">
 	<head>
 	  <meta charset="utf-8">
-	  <title>WatchRockets - Launches</title>
+	  <title>WatchRockets.com</title>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="icon" type="image/ico" href="http://watchrockets.com/favicon.ico">
 	  <!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -32,6 +32,7 @@
 							  <div class="formfields">
 								  <input type="email" id="mc-email-head" class="email-box" name="mc-email" placeholder="Email Address" required/>
 								  <button type="submit">Sign Up</button>
+								  <div id="form-result-head" class="form-result"></div>
 							  </div>
 							  <div class="alerts-info">
 							  <span id="learn-more-btn"><i id="plus-minus" class="fa fa-plus" aria-hidden="true"></i>Learn More</span>
@@ -59,7 +60,7 @@
 					<nav id="mobile-navigation" class="mobile-navigation">
 						<a href="http://watchrockets.com/" class="menu-item">Home</a>
 						<a href="http://watchrockets.com/about" class="menu-item">About</a>
-						<a href="http://watchrockets.com/news" class="menu-item">News</a>
+						<a href="http://watchrockets.com/news"  class="menu-item">News</a>
 						<a href="http://watchrockets.com/launch-providers" class="menu-item">Launch Providers</a>
 						<a href="http://watchrockets.com/rockets" class="menu-item">Rockets</a>
 						<a href="http://watchrockets.com/launch-alerts" class="menu-item">Launch Alerts</a>
@@ -68,6 +69,7 @@
 						  <div class="formfields">
 							  <input type="email" id="mc-email-nav" class="email-box" name="mc-email" placeholder="Email Address" required/>
 							  <button type="submit">Sign Up</button>
+							  <div id="form-result-nav" class="form-result"></div>
 						  </div>
 						</form>
 					</nav>
@@ -75,18 +77,44 @@
 			</div>
 		</header>
 		<div class="wrapper">
-			<main id="content" class="site-content main">
-				<div class="info">
-					<p>All times are users local time <span id="timezone"></span></p>
-				</div>
-				<section id="launches-main" class="primary">
-					<div class='uil-spin-css' style='-webkit-transform:scale(0.32)'><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div>
-				</section>
-				<!--<aside class="secondary">
+			<main id="content" class="site-content sidebar">
+
+				<section id="primary" class="primary news">
+					<article>
+						<header>
+							<h1>Launch Alerts</h1>
+						</header>
+						<div class="featured-container">
+							<a href="public/images/launch-alert.png"><img class="featured" src="public/images/launch-alert.png"></a>
+							<div class="caption"><p>Sample Launch Alert Email</p></div>
+						</div>
+						<p>Sign up to receive an emailed Launch Alert whenever a launch webcast is about to go live. If there is a webcast available, we will find it and notify you by email up to one hour before the launch window opens. Launch alert emails will also include detailed information about each launch, including any available webcast links, information about payload customers, weather forecasts, and landing attempts.</p>
+						
+						<h3 class="signup-label">Sign up now!</h3>
+
+						<div class="page-signup">
+							<form id="mc-form-page" class="mc-form" method="POST" action="./email-validate.php">
+							  <h3 class="launch-alerts">Never miss a launch with Launch Alerts</h3>
+							  <div class="formfields">
+								  <input type="email" id="mc-email-page" class="email-box" name="mc-email" placeholder="Email Address" required/>
+								  <button type="submit">Sign Up</button>
+								  <div id="form-result-page" class="form-result"></div>
+							  </div>
+							</form>
+						</div>
+
+
+					</article>
 					
-				</aside>-->
+					
+				</section>
+				<aside class="secondary">
+					<h2>Upcoming Launches</h2>
+					<div id="launches-side">
+						<div class='uil-spin-css' style='-webkit-transform:scale(0.32)'><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div>
+					</div>
+				</aside>
 			</main>
-			
 		</div>
 		<footer id="footer" class="site-footer">
 			<div class="footer-inner">
@@ -111,7 +139,6 @@
 				</p>
 			</div>
 		</div>
-		<form id="mc-form-page" style="display: none;"></form>
 	<script src="scripts.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

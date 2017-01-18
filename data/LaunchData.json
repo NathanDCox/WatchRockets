@@ -1,0 +1,46 @@
+{
+  "launches": [
+    {
+      "id": "1",
+      "name": "Delta IV Medium",
+      "provider": "United Launch Alliance",
+      "infoURL": "http://www.ulalaunch.com/",
+      "payload": "AFSPC-6",
+      "customer": "US Air Force",
+      "net": "August 19, 2016",
+      "windowstart": "04:37:00 UTC",
+      "windowend": "05:52:00 UTC",
+      "launchpad": "Space Launch Complex 41, Cape Canaveral, FL",
+      "vidURL": "http://www.ulalaunch.com/webcast",
+      "photo": "http://watchrockets.com/img/rockets/DeltaIVM42.jpg"
+    }
+    {
+      "id": "2",
+      "name": "Ariane 5",
+      "provider": "Arianespace",
+      "infoURL": "http://www.arianespace.com/",
+      "payload": "Intelsat 33e & Intelsat 36",
+      "customer": "Intelsat",
+      "net": "August 24, 2016",
+      "windowstart": "21:55:00 UTC",
+      "windowend": "22:40:00 UTC",
+      "launchpad": "Ariane Launch Area 3, Kourou, French Guiana",
+      "vidURL": "http://www.arianespace.com/",
+      "photo": "http://watchrockets.com/img/rockets/Ariane5.jpg"
+    }
+    {
+      "id": "3",
+      "name": "Rokot/Briz KM",
+      "provider": "Eurockot",
+      "infoURL": "http://www.eurockot.com/",
+      "payload": "Gonets-M24, Gonets-M25, Gonets-M26",
+      "customer": "Intelsat",
+      "net": "August 24, 2016",
+      "windowstart": "21:55:00 UTC",
+      "windowend": "22:40:00 UTC",
+      "launchpad": "Ariane Launch Area 3, Kourou, French Guiana",
+      "vidURL": "http://www.arianespace.com/",
+      "photo": "http://watchrockets.com/img/rockets/Ariane5.jpg"
+    }
+  ]
+}
