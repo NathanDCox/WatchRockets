@@ -1,4 +1,0 @@
-User-Agent: *
-Disallow: 
-Disallow: /email-validate.php
-Disallow: /404.html

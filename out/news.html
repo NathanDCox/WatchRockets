@@ -1,0 +1,179 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>WatchRockets - News</title>
+	  <meta name="generator" content="DocPad v6.78.6" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="icon" type="image/ico" href="http://watchrockets.com/favicon.ico">
+	  <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/style.min.css" />
+	  <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  <![endif]--> 
+	</head>
+	<body>
+		<header id="header" class="site-header">
+			<div class="nav-inner">
+				<div id="logo">
+					<a class="logo-wrap" href="http://watchrockets.com"><img src="/public/images/logo.svg" alt="WatchRockets.com"/></a>
+				</div>
+				<div class="header-content">
+					<div class="header-top">
+						<div class="email">
+							<form id="mc-form-head" class="mc-form" method="POST" action="./email-validate.php">
+							  <h3 class="launch-alerts">Never miss a launch with Launch Alerts</h3>
+							  <div class="formfields">
+								  <input type="email" id="mc-email-head" class="email-box" name="mc-email" placeholder="Email Address" required/>
+								  <button type="submit">Sign Up</button>
+							  </div>
+							  <div class="alerts-info">
+							  <span id="learn-more-btn"><i id="plus-minus" class="fa fa-plus" aria-hidden="true"></i>Learn More</span>
+							  	<div id="learn-more-dialog" class="learn-more-dialog">
+									<p>Sign up to receive an emailed Launch Alert whenever a launch webcast is about to go live. If there is a webcast available, we will find it and notify you by email up to one hour before the launch window opens. Launch alert emails will also include any available webcast links, and information about payload customers, weather forecasts, and landing attempts.</p><br/><p>Sign up now!</p>
+							  	</div>
+							  </div>
+							</form>
+						</div>
+					</div>
+					<nav id="main-navigation" class="site-navigation">
+						<a href="http://watchrockets.com/" class="menu-item">Home</a>
+						<a href="http://watchrockets.com/about" class="menu-item">About</a>
+						<a href="http://watchrockets.com/news" class="menu-item">News</a>
+						<a href="http://watchrockets.com/launch-providers" class="menu-item">Launch Providers</a>
+						<a href="http://watchrockets.com/rockets" class="menu-item">Rockets</a>
+						<a href="http://watchrockets.com/launch-alerts" class="menu-item">Launch Alerts</a>
+					</nav>
+				</div>
+				<div id="toggle-wrapper" class="toggle-wrapper">
+					<h1><i class="fa fa-rocket" aria-hidden="true"></i>WatchRockets.com</h1>
+					<button id="menu" class="menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
+				</div>
+				<div id="mobile-nav">
+					<nav id="mobile-navigation" class="mobile-navigation">
+						<a href="http://watchrockets.com/" class="menu-item">Home</a>
+						<a href="http://watchrockets.com/about" class="menu-item">About</a>
+						<a href="http://watchrockets.com/news" class="menu-item">News</a>
+						<a href="http://watchrockets.com/launch-providers" class="menu-item">Launch Providers</a>
+						<a href="http://watchrockets.com/rockets" class="menu-item">Rockets</a>
+						<a href="http://watchrockets.com/launch-alerts" class="menu-item">Launch Alerts</a>
+						<form id="mc-form-nav" class="mc-form" method="POST" action="./email-validate.php">
+						  <h3 class="launch-alerts">Never miss a launch with Launch Alerts</h3>
+						  <div class="formfields">
+							  <input type="email" id="mc-email-nav" class="email-box" name="mc-email" placeholder="Email Address" required/>
+							  <button type="submit">Sign Up</button>
+						  </div>
+						</form>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div class="wrapper">
+			<main id="content" class="site-content page">
+				<section id="primary" class="primary news">
+					<article>
+						<header>
+							<h1>News</h1>
+						</header>
+							<p>Coming Soon!</p>
+
+					</article>
+				</section>
+				<aside class="secondary">
+					<h2>Upcoming Launches</h2>
+					<div id="launches-side">
+						<div class='uil-spin-css' style='-webkit-transform:scale(0.32)'><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div>
+					</div>
+				</aside>
+			</main>
+			
+		</div>
+		<footer id="footer" class="site-footer">
+			<div class="footer-inner">
+				<div class="spacer">
+				</div>
+				<div class="footer-links">
+					<p>&#169; 2016, WatchRockets.com</p>
+					<a href="http://watchrockets.com/about">About</a>
+					<a href="https://launchlibrary.net/" target="_blank">LaunchLibrary API</a>
+					<a href="http://watchrockets.com/news">News</a>
+					<a href="http://watchrockets.com/launch-providers">Launch Providers</a>
+					<a href="http://watchrockets.com/rockets">Rockets</a>
+					<a href="http://watchrockets.com/launch-alerts">Launch Alerts</a>
+					<a href="mailto:info@watchrockets.com">Contact</a>
+				</div>
+			</div>	
+		</footer>
+		<div id="form-result-overlay" class="form-result-overlay hidden"></div>
+		<div id="form-result-wrapper" class="form-result-wrapper hidden">
+			<div class="response">
+				<h3>Thank you for your interest in Launch Alerts!</h3>
+				<p id="response" class="response-text">
+
+				</p>
+			</div>
+		</div>
+		<form id="mc-form-page" style="display: none;"></form>
+		<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/docpad-livereload/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script defer="defer"  src="/scripts/scripts.js"></script>
+		<!--<script type="text/javascript" src="/scripts/scripts.js"></script>-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-64610757-3', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	</body>
+</html>
